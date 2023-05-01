@@ -31,5 +31,5 @@ d108af6eb4b5   sem4univer_backend_celery-beat   "/usr/src/app/entryp…"   2 sec
 2. Запустить шелл внутри контейнера
 ```bash
 
-  docker exec -it 7bf761ddf202 python3 manage.py shell
+  docker exec -it 48ac4e881e2b python3 manage.py shell
 ```
