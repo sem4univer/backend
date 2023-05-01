@@ -19,7 +19,7 @@
 
 1. Узнать id контейнера `sem4univer_backend_web`
 ```bash
-➜  sem4univer_backend docker container list
+> docker container list
 CONTAINER ID   IMAGE                            COMMAND                  CREATED          STATUS         PORTS                                                                                  NAMES
 7bf761ddf202   sem4univer_backend_celery        "/usr/src/app/entryp…"   1 second ago     Up 1 second                                                                                           sem4univer_backend_celery_1
 48ac4e881e2b   sem4univer_backend_web           "/usr/src/app/entryp…"   1 second ago     Up 1 second    0.0.0.0:1337->8000/tcp, :::1337->8000/tcp                                              sem4univer_backend_web_1
