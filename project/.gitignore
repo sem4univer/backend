@@ -11,6 +11,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+venv/
 env/
 bin/
 build/
@@ -111,6 +112,7 @@ typings
 .env
 
 ### LOCAL ###
+static/
 collected_static/
 static/bundles/
 local_*

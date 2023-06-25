@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-o9)p$_hpb1+um3p!f)(d5*h@+f_*w(6@hs2l&hv7-&t*gm6gf2
 DEBUG = True
 
 ALLOWED_HOSTS = [
-  '0.0.0.0'
+    '0.0.0.0'
 ]
 
 
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_swagger',
 ]
 
 REST_FRAMEWORK = {
@@ -50,7 +51,8 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
-    ]
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
 }
 
 MIDDLEWARE = [
@@ -77,6 +79,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {
+                'staticfiles': 'django.templatetags.static',
+            },
         },
     },
 ]
