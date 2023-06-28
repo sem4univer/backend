@@ -4,6 +4,8 @@ from rest_framework import routers, serializers, viewsets
 
 from rest_framework_swagger.views import get_swagger_view
 
+from shop.views import ProductViewSet, ReviewViewSet
+
 schema_view = get_swagger_view(title='Pastebin API')
 
 
@@ -23,6 +25,8 @@ class UserViewSet(viewsets.ModelViewSet):
 # Routers provide a way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
+router.register('products', ProductViewSet, basename='product')
+router.register('review', ReviewViewSet, basename='review')
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
