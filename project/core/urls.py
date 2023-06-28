@@ -7,8 +7,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
+from shop.views import ProductViewSet, ReviewViewSet
+
+schema_view = get_swagger_view(title='Pastebin API')
+
 from drf_yasg import openapi
 from django.contrib import admin
+
 
 from shop.views import ProductViewSet, ReviewViewSet
 
@@ -35,6 +40,12 @@ router = DefaultRouter()
 router.register('products', ProductViewSet, basename='product')
 router.register('review', ReviewViewSet, basename='review')
 
+
+# Routers provide a way of automatically determining the URL conf.
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
+router.register('products', ProductViewSet, basename='product')
+router.register('review', ReviewViewSet, basename='review')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
